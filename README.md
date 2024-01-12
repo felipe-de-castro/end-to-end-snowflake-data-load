@@ -32,7 +32,7 @@ create or replace database project_snowflake;
 
 _Bucket links:_
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/5017b8cd36d0accaf55b5a5e22d465395a02d3e4ca7c66f4.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/bucket_link.png)
 
 ```plaintext
 create or replace storage integration s3_int
@@ -51,7 +51,7 @@ Using _**DESC integration \<name\_integration>**_ will describe the properties o
 desc integration s3_int;
 ```
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/ca95b56e8ec96e08cac6dc1a2eb944be2a0b4508c5410591.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/desc_integration.png)
 
 #### Create File Format for CSV and Json
 
@@ -102,7 +102,7 @@ list @project_snowflake.public.aws_stage_csv;
 list @project_snowflake.public.aws_stage_json;
 ```
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/1d5c06bdef1dba4294c82f25a89a8f1e45c3902426f8e4bc.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/list_results.png)
 
 #### **Querying Data in Staged Files**
 
@@ -120,7 +120,7 @@ select $1,$2,$3,$4,$5,$6 from @project_snowflake.public.aws_stage_csv;
 select $1 from @project_snowflake.public.aws_stage_json;   
 ```
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/8f28085a2c30b7aaa252a3a885232f5deb5da7555e7e465e.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/query_stage.png)
 
 #### Querying the staged JSON for later on create a copy command for the pipe.
 
@@ -209,7 +209,7 @@ Creating table to load the data from csv and json into it.
    desc pipe project_snowflake.pipe.employee_json;
 ```
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/953a226bd0fd2983726ca2348fe7fdb65d37d294592049b9.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/desc_notification.png)
 
 *   In **AWS S3**: got to **Properties** of the current **bucket**. 
     *   Scroll to the **EVENT NOTIFICATION** for setting up:
@@ -218,7 +218,7 @@ Creating table to load the data from csv and json into it.
         *   **Destination**: ‘SQS’
         *   **SQS queue**: paste de queue ARN;
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/4714b12e534c70357de5233bc26cc44a20964fb2a8e086ab.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/desc_integration.png)
 
 #### Restarting the pipe to load the data
 
@@ -242,7 +242,7 @@ The following will refresh the pipe (i.e. copying the specified staged data file
  select SYSTEM$PIPE_STATUS('project_snowflake.pipe.employee_json');
 ```
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/0d385678e63e058dc1a360ea8893767a46c23d193bbe3f44.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/pipe_status.png)
 
 #### Final query of the table
 
@@ -252,7 +252,7 @@ The following will refresh the pipe (i.e. copying the specified staged data file
  select * from project_snowflake.public.employees;
 ```
 
-![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/721a397c894c3cc328545c686731f968555697464ce7c966.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/final_query_dataloaded.png)
 
 ####  Conclusion:
 
