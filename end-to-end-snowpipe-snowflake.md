@@ -260,6 +260,8 @@ When dealing with larger file sizes, particularly in the range of 100MB to 200MB
 
  In contrast, employing the copy command allows for a faster loading time for the same file. Snowpipe proves to be more suitable for scenarios involving very small files with low frequency, where the latency of file ingestion is not a critical factor.
 
+Fell free to try it yourself. The datafiles are in the github folder in this project.
+
 #### Reference:
 
 [Snowflake Official Documentation](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-auto-s3#step-3-configure-security)
