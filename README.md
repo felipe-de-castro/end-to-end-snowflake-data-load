@@ -12,6 +12,9 @@ If you are on an account admin or have a higher access level (because you are tr
 
 It efficiently loads data from files into Snowflake as soon as the data or files become available in the designated stage. This process involves executing a copy statement to transfer the data into Snowflake. The Snowflake platform is informed about the presence of new staged files through Event Notification (**AWS SQS**) from the S3 bucket and by invoking Snowpipe REST endpoints.
 
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/Anima%C3%A7%C3%A3o.gif)
+_schema_
+
 Continuous data load in Snowflake using Snowpipe require a few steps that will be shown below:
 
 #### Create a database to work on:
