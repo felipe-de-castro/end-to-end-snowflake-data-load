@@ -221,7 +221,7 @@ Creating table to load the data from csv and json into it.
         *   **Destination**: ‘SQS’
         *   **SQS queue**: paste de queue ARN;
 
-![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/desc_integration.png)
+![](https://github.com/felipe-de-castro/end-to-end-snowflake-data-load/blob/main/imagens/event_notification.png)
 
 #### Restarting the pipe to load the data
 
