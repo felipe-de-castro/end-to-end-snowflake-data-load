@@ -1,4 +1,4 @@
-## Continuos Data Load - AWS S3 to Snowflake (Snowpipe) ❄️
+## End to End Project on Snowflake & AWS | Continuos Data Load (Snowpipe) ❄️
 
 This project demonstrates how to set up a Continuous Data Load using Snowpipe in Snowflake, utilizing the serverless solution for effortless file transfer from AWS S3 to Snowflake tables. 
 
